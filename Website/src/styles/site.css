@@ -420,6 +420,15 @@
     display:flex;justify-content:space-between;font-size:12.5px;color:#5b6670;flex-wrap:wrap;gap:14px}
   .footer-bottom .heart{color:var(--teal)}
 
+  .legal-page{max-width:820px;margin:0 auto;padding:64px 28px 96px;color:var(--charcoal)}
+  .legal-page h1{font-size:clamp(40px,6vw,64px);margin:18px 0 8px}
+  .legal-page h2{font-family:'Inter Tight',ui-sans-serif,system-ui,sans-serif;font-size:24px;letter-spacing:-0.01em;color:var(--ink);margin:36px 0 10px}
+  .legal-page p{font-size:16px;line-height:1.7;color:#46535e}
+  .legal-page a{color:var(--teal-deep);font-weight:600}
+  .legal-page .btn{color:#fff}
+  .legal-back{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-family:'Inter Tight';font-size:20px;font-weight:600}
+  .legal-updated{color:var(--muted);margin-top:0}
+
   /* small util */
   .check-bullet{display:flex;align-items:center;gap:8px;font-size:14px;color:#46535e}
   .check-bullet svg{color:var(--teal);flex-shrink:0}
