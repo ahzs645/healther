@@ -1,22 +1,36 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct TemplateLibraryView: View {
     @Environment(ImportStore.self) private var importStore
+    @Environment(TemplateExportStore.self) private var templateExportStore
     @State private var editorTemplate: ImportTemplate?
+    @State private var isShowingTemplateImporter = false
+    @State private var alertMessage: String?
 
     var body: some View {
         List {
             ForEach(importStore.templates) { template in
-                Button {
-                    if template.isBuiltIn {
-                        importStore.selectedTemplate = template
-                    } else {
-                        editorTemplate = template
+                HStack(alignment: .top, spacing: 12) {
+                    Button {
+                        if template.isBuiltIn {
+                            importStore.selectedTemplate = template
+                        } else {
+                            editorTemplate = template
+                        }
+                    } label: {
+                        TemplateLibraryRow(template: template)
                     }
-                } label: {
-                    TemplateLibraryRow(template: template)
+                    .buttonStyle(.plain)
+
+                    if let exportURL = templateExportStore.exportURL(for: template) {
+                        ShareLink(item: exportURL) {
+                            Image(systemName: "square.and.arrow.up")
+                                .frame(width: 34, height: 34)
+                        }
+                        .accessibilityLabel("Share \(template.name) template")
+                    }
                 }
-                .buttonStyle(.plain)
                 .swipeActions {
                     if !template.isBuiltIn {
                         Button(role: .destructive) {
@@ -26,10 +40,26 @@ struct TemplateLibraryView: View {
                         }
                     }
                 }
+                .contextMenu {
+                    if let exportURL = templateExportStore.exportURL(for: template) {
+                        ShareLink(item: exportURL) {
+                            Label("Share Template", systemImage: "square.and.arrow.up")
+                        }
+                    }
+                }
             }
         }
         .navigationTitle("Templates")
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    isShowingTemplateImporter = true
+                } label: {
+                    Image(systemName: "square.and.arrow.down")
+                }
+                .accessibilityLabel("Import shared template")
+            }
+
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     editorTemplate = .blankCustom
@@ -39,10 +69,37 @@ struct TemplateLibraryView: View {
                 .accessibilityLabel("New template")
             }
         }
+        .fileImporter(
+            isPresented: $isShowingTemplateImporter,
+            allowedContentTypes: [.json],
+            allowsMultipleSelection: false
+        ) { result in
+            handleTemplateImport(result)
+        }
+        .alert("Templates", isPresented: Binding(
+            get: { alertMessage != nil },
+            set: { if !$0 { alertMessage = nil } }
+        )) {
+            Button("OK") {}
+        } message: {
+            Text(alertMessage ?? "")
+        }
         .sheet(item: $editorTemplate) { template in
             NavigationStack {
                 TemplateEditorView(template: template)
+                    .environment(importStore)
+                    .environment(templateExportStore)
             }
+        }
+    }
+
+    private func handleTemplateImport(_ result: Result<[URL], Error>) {
+        do {
+            guard let url = try result.get().first else { return }
+            try importStore.importTemplate(url: url)
+            alertMessage = "Imported shared template."
+        } catch {
+            alertMessage = error.localizedDescription
         }
     }
 }

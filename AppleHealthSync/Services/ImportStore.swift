@@ -45,6 +45,20 @@ final class ImportStore {
         statusMessage = records.isEmpty ? "No importable records found." : nil
     }
 
+    func preview(data: Data, fileName: String, template: ImportTemplate) throws {
+        selectedTemplate = template
+        let records = try ImportParser.parse(data: data, template: template)
+        let supplementalMetrics = try ImportParser.supplementalMetrics(data: data, template: template)
+        currentBatch = ImportBatch(
+            fileName: fileName,
+            template: template,
+            records: records,
+            supplementalMetrics: supplementalMetrics,
+            importedAt: nil
+        )
+        statusMessage = records.isEmpty ? "No importable records found." : nil
+    }
+
     func loadBundledSample(named sampleName: String) throws {
         let sample = sampleName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let fixture = SampleFixture.allCases.first(where: { $0.rawValue == sample || $0.fileName == sample }),
@@ -98,6 +112,22 @@ final class ImportStore {
             selectedTemplate = templates.first ?? ImportTemplate.builtIns[0]
         }
         persistCustomTemplates()
+    }
+
+    func importTemplate(url: URL) throws {
+        let didAccess = url.startAccessingSecurityScopedResource()
+        defer {
+            if didAccess {
+                url.stopAccessingSecurityScopedResource()
+            }
+        }
+
+        let data = try Data(contentsOf: url)
+        var template = try JSONDecoder().decode(ImportTemplate.self, from: data)
+        template.id = UUID()
+        template.isBuiltIn = false
+        template.logoImageName = nil
+        saveTemplate(template)
     }
 
     private func loadCustomTemplates() {

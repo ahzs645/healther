@@ -4,12 +4,14 @@ import SwiftUI
 struct AppleHealthSyncApp: App {
     @State private var importStore = ImportStore()
     @State private var healthStore = HealthKitImportStore()
+    @State private var templateExportStore = TemplateExportStore()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(importStore)
                 .environment(healthStore)
+                .environment(templateExportStore)
                 .task {
                     loadRequestedSampleIfNeeded()
                 }

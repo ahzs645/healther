@@ -93,6 +93,17 @@ struct ContentView: View {
                 .buttonStyle(.plain)
 
                 NavigationLink {
+                    ManualImportView()
+                } label: {
+                    DashboardActionRow(
+                        title: "Manual Import",
+                        subtitle: "Pick any CSV or JSON file and map fields yourself.",
+                        systemImage: "wand.and.sparkles"
+                    )
+                }
+                .buttonStyle(.plain)
+
+                NavigationLink {
                     TemplateLibraryView()
                 } label: {
                     DashboardActionRow(
@@ -222,4 +233,5 @@ private struct DashboardActionRow: View {
     ContentView()
         .environment(ImportStore())
         .environment(HealthKitImportStore())
+        .environment(TemplateExportStore())
 }

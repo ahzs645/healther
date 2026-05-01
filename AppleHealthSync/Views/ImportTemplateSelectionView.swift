@@ -19,6 +19,14 @@ struct ImportTemplateSelectionView: View {
                 }
 
                 LazyVGrid(columns: columns, spacing: 14) {
+                    NavigationLink {
+                        ManualImportView()
+                    } label: {
+                        ManualImportTileView()
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Manual import")
+
                     ForEach(importStore.templates) { template in
                         NavigationLink {
                             ImportTemplateImportView(template: template)
@@ -49,10 +57,37 @@ struct ImportTemplateSelectionView: View {
     }
 }
 
+private struct ManualImportTileView: View {
+    var body: some View {
+        VStack(spacing: 8) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .fill(Color.accentColor.opacity(0.12))
+                Image(systemName: "wand.and.sparkles")
+                    .font(.title2)
+                    .foregroundStyle(.tint)
+            }
+            .frame(width: 48, height: 44)
+
+            Text("Manual Import")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .multilineTextAlignment(.center)
+                .frame(minHeight: 32, alignment: .top)
+        }
+        .frame(maxWidth: .infinity, minHeight: 106)
+        .padding(10)
+        .background(Color(.secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+    }
+}
+
 #Preview {
     NavigationStack {
         ImportTemplateSelectionView()
             .environment(ImportStore())
             .environment(HealthKitImportStore())
+            .environment(TemplateExportStore())
     }
 }
