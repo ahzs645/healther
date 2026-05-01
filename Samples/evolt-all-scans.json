@@ -1,0 +1,177 @@
+[
+  {
+    "id": 10000001,
+    "scanDate": "15 January 2026 at 08:30",
+    "bwiScore": "7.8",
+    "metrics": [
+      {
+        "section": "Summary",
+        "metric": "Total Body Weight",
+        "value": "72.4 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Summary",
+        "metric": "Lean Body Mass",
+        "value": "58.9 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Summary",
+        "metric": "Total Body Water",
+        "value": "42.6 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Summary",
+        "metric": "Skeletal Muscle Mass",
+        "value": "31.8 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Summary",
+        "metric": "Total Fat Mass",
+        "value": "13.5 kg",
+        "status": ""
+      },
+      {
+        "section": "Summary",
+        "metric": "Bio Age",
+        "value": "31",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Protein",
+        "value": "12.6 kg",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Mineral",
+        "value": "3.9 kg",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Visceral Fat Area",
+        "value": "61 cm2",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Total Body Fat Percentage",
+        "value": "18.6%",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Visceral Fat Level",
+        "value": "7",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Intracellular Fluid (ICF)",
+        "value": "28.7 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Extracellular Fluid (ECF)",
+        "value": "13.9 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Basal Metabolic Rate (BMR)",
+        "value": "1645 kCal",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Total Energy Expenditure (TEE)",
+        "value": "2410 kCal",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Subcutaneous Fat Mass",
+        "value": "11.9 kg",
+        "status": ""
+      },
+      {
+        "section": "Body Composition",
+        "metric": "Visceral Fat Mass",
+        "value": "1.6 kg",
+        "status": ""
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Left Arm Lean Mass",
+        "value": "2.86 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Right Arm Lean Mass",
+        "value": "2.91 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Left Leg Lean Mass",
+        "value": "8.72 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Right Leg Lean Mass",
+        "value": "8.84 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Torso Lean Mass",
+        "value": "23.14 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Left Arm Fat Mass",
+        "value": "0.92 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Right Arm Fat Mass",
+        "value": "0.94 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Left Leg Fat Mass",
+        "value": "2.12 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Right Leg Fat Mass",
+        "value": "2.08 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Torso Fat Mass",
+        "value": "7.22 kg",
+        "status": "Optimal"
+      },
+      {
+        "section": "Segmental Analysis",
+        "metric": "Waist to Hip Ratio",
+        "value": "0.82",
+        "status": ""
+      }
+    ]
+  }
+]

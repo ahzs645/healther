@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>HealtherIcon20</string>
+				<string>HealtherIcon29</string>
+				<string>HealtherIcon40</string>
+				<string>HealtherIcon60</string>
+				<string>HealtherIcon1024</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>HealtherIcon20</string>
+				<string>HealtherIcon29</string>
+				<string>HealtherIcon40</string>
+				<string>HealtherIcon76</string>
+				<string>HealtherIcon83.5</string>
+				<string>HealtherIcon1024</string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>LSItemContentTypes</key>
+				<array>
+					<string>public.comma-separated-values-text</string>
+					<string>public.delimited-values-text</string>
+					<string>com.microsoft.excel.csv</string>
+					<string>public.json</string>
+				</array>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
+			<key>CFBundleTypeName</key>
+				<string>Health Import Files</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+		</dict>
+	</array>
+</dict>
+</plist>
