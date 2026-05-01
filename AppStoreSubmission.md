@@ -10,6 +10,8 @@
 - Temporary app icon asset catalog staged in `AppStoreAssets/Assets.xcassets`.
 - Healther icon source stored at `AppStoreAssets/SourceIcon/healther-icon.svg`.
 - Bundled icon PNGs generated under `AppleHealthSync/AppIcons` and referenced from `Info.plist`.
+- App Store screenshot exports staged under `AppStoreAssets/Screenshots/JPEG`.
+- App Store listing copy staged in `AppStoreListing.md`.
 - Privacy manifest with tracking disabled and UserDefaults required-reason API declared.
 - Export compliance flag set to no non-exempt encryption.
 - Public marketing/support site deployed from `Website/` via GitHub Pages.
@@ -21,9 +23,12 @@
 
 - Replace `AppStoreAssets/SourceIcon/healther-icon.svg` and regenerate `AppStoreAssets/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` plus `AppleHealthSync/AppIcons/HealtherIcon*.png` when the final logo changes.
 - Before archiving, move `AppStoreAssets/Assets.xcassets` into `AppleHealthSync/Assets.xcassets` and set `ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon` for Debug and Release in the target build settings. This was left outside the target because the current local Xcode install reports an asset-catalog runtime mismatch: installed simulator runtimes `23C54`/`23E244` do not match the iOS 26.4 SDK build `23E252`.
+- If Xcode archive reports `iOS 26.4 is not installed` even though device builds pass, install the matching iOS platform in Xcode > Settings > Components, then archive again with a real Apple Developer signing team selected.
 - Confirm `com.ahmadjalil.healther` is the desired App Store Connect bundle ID. If your Apple Developer account uses a company domain, update it before creating the App Store record.
 - Add the privacy policy URL in App Store Connect: `https://projects.ahmadjalil.com/healther/privacy.html`.
 - Add the support URL in App Store Connect: `https://projects.ahmadjalil.com/healther/support.html`.
+- Use listing copy from `AppStoreListing.md`.
+- Upload screenshots from `AppStoreAssets/Screenshots/JPEG`; use the Pro Max files for the largest iPhone slot when available, and the iPad Pro 13 file if keeping iPad support enabled.
 - In App Store Connect privacy answers, use Data Not Collected if health files remain on-device and are not transmitted to you or third parties.
 - Prepare App Store screenshots for iPhone and iPad.
 - Prepare review notes that explain HealthKit access is used to save user-selected imports into Apple Health.
