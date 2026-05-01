@@ -1,0 +1,64 @@
+<!-- ─────────── How it works ─────────── -->
+<section class="how block" id="how">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span>The whole flow</span>
+      <h2 class="display">Three steps. No magic.</h2>
+      <p>The same flow whether it's a one-off file or your monthly export
+        routine — only the second step gets shorter once you save a template.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Pick a file</h3>
+        <p>Choose a CSV, JSON or TSV from anywhere on your device. healther
+          parses the headers and shows you exactly what's inside.</p>
+        <div class="step-illo">
+          <div class="file-illo">
+            <div class="tag">// Fitbit_Export.csv</div>
+            <div class="row"><span>date,steps,bpm,sleep</span><span>✓</span></div>
+            <div class="row"><span>2024-05-12,8643,72,7.4</span><span>✓</span></div>
+            <div class="row"><span>2024-05-13,9117,68,7.1</span><span>✓</span></div>
+            <div class="row"><span>2024-05-14,7902,71,—</span><span>!</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Map columns &mdash; once</h3>
+        <p>Connect each column to its Health field, set units and date format,
+          then run it once or save the mapping as a reusable template.</p>
+        <div class="step-illo">
+          <div class="map-illo">
+            <div class="col">
+              <span class="pill">date_utc</span>
+              <span class="pill">avg_hr</span>
+              <span class="pill">step_count</span>
+            </div>
+            <svg class="arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <div class="col">
+              <span class="pill">startDate</span>
+              <span class="pill">heartRate</span>
+              <span class="pill">stepCount</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Import to Health</h3>
+        <p>Records are written to Apple Health through HealthKit, on your
+          device only. Every batch is reversible — one click undoes it.</p>
+        <div class="step-illo">
+          <div class="save-illo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12.6c.6-1 1-2.2 1-3.6a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 5.6 9 11 9 11s4.5-2.7 7.2-6.1"/></svg>
+            <span>Written via <b style="color:var(--ink)">HealthKit</b> · fully undoable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -62,3 +62,7 @@ Command-line verification used here:
 ```sh
 xcodebuild -project AppleHealthSync.xcodeproj -target AppleHealthSync -sdk iphonesimulator26.4 build
 ```
+
+## Website
+
+The marketing site lives in `Website/`. GitHub Actions deploys it to GitHub Pages from `.github/workflows/pages.yml` whenever `Website/**` changes on `main`.

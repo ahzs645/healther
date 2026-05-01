@@ -1,0 +1,93 @@
+<!-- ─────────── Features ─────────── -->
+<section class="block" id="features">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span>Manual import, made calm</span>
+      <h2 class="display">A small set of tools that<br/>do exactly what you'd expect.</h2>
+      <p>healther doesn't try to be a sync engine. It's a careful manual
+        importer: pick a file, map its columns to Health fields, and either run
+        the import once or save the mapping as a reusable template you can
+        export and share.</p>
+    </div>
+
+    <div class="features-mosaic">
+      <article class="feature lg">
+        <div class="ficon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+        </div>
+        <h3>Map columns to Health fields</h3>
+        <p>Open your file, see every column it contains, and connect each one
+          to the matching HealthKit field. Skip what you don't need. Set the
+          unit, date format and source — once, then run.</p>
+
+        <div class="preview">
+          <div class="preview-head">
+            <span>column → Health field</span>
+            <span class="ok">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              all matched
+            </span>
+          </div>
+          <div class="preview-rows">
+            <div class="preview-line">
+              <span class="k"><span class="v">date_utc</span> &nbsp;→&nbsp; startDate</span>
+              <span class="v" style="color:#7d8893">ISO 8601</span>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="preview-line">
+              <span class="k"><span class="v">avg_hr</span> &nbsp;→&nbsp; HKHeartRate</span>
+              <span class="v" style="color:#7d8893">count/min</span>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="preview-line">
+              <span class="k"><span class="v">step_count</span> &nbsp;→&nbsp; HKStepCount</span>
+              <span class="v" style="color:#7d8893">count</span>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div class="preview-line">
+              <span class="k"><span class="v">weight_kg</span> &nbsp;→&nbsp; HKBodyMass</span>
+              <span class="v" style="color:#7d8893">kg</span>
+              <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="ficon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+        </div>
+        <h3>One-time or reusable</h3>
+        <p>Run a mapping once for a one-off file, or save it as a template so
+          the next monthly export goes through in two clicks.</p>
+      </article>
+
+      <article class="feature glow">
+        <div class="ficon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h12"/><path d="M19 16l3 2-3 2"/></svg>
+        </div>
+        <h3>Export &amp; share templates</h3>
+        <p>Saved templates are plain files. Export one, send it to a friend,
+          import it back — your mappings stay yours, and portable.</p>
+      </article>
+
+      <article class="feature deep">
+        <div class="ficon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>On-device, always</h3>
+        <p>No accounts, no telemetry, no cloud. Files are parsed, mapped and
+          written entirely on your device — open-source so you can verify.</p>
+      </article>
+
+      <article class="feature">
+        <div class="ficon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Honest about scope</h3>
+        <p>healther is a manual importer, not a background sync. You stay in
+          control of what gets written and when — every batch is undoable.</p>
+      </article>
+    </div>
+  </div>
+</section>
