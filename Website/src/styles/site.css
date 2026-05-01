@@ -44,7 +44,7 @@
     height:64px}
   .brand{display:flex;align-items:center;gap:9px;font-family:'Inter Tight';
     font-weight:600;font-size:20px;letter-spacing:-0.02em;color:var(--ink)}
-  .brand svg{width:22px;height:22px}
+  .brand img{width:22px;height:32px;display:block;object-fit:contain}
   .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;color:#3a4550;font-weight:500}
   .nav-links a{transition:color .15s}
   .nav-links a:hover{color:var(--teal-deep)}
